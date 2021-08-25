@@ -1,23 +1,39 @@
-import logo from './logo.svg';
+import { createSignal, Show } from "solid-js";
+import ProductCard from './Component/ProductCard'
+import CartModal from './Component/CartModal'
 import './App.css';
 
 function App() {
+  const [show, setShow] = createSignal(false);
   return (
     <div class="App">
-      <header class="App-header">
-        <img src={logo} class="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          class="App-link"
-          href="https://github.com/solidjs/solid"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Solid
-        </a>
-      </header>
+      <ul class="topnav">
+        <li class="right"><span>Solid Shop!</span></li>
+      </ul>
+      
+      <Show
+        when={show()}
+        fallback={
+        <span class="btn" onClick={(e) => setShow(true)}>
+          <i class="material-icons">shopping_cart</i>
+        </span>
+        }
+      >
+        <div class="modal">
+          <p>
+            <span class="modalBtn" onClick={(e) => setShow(false)}>
+            <i class="material-icons">close</i>
+            </span>
+            <span class="modalTitle">
+              Cart Shoping
+            </span>
+          </p>
+          <CartModal />
+        </div>
+      </Show>
+          
+
+      <ProductCard />
     </div>
   );
 }

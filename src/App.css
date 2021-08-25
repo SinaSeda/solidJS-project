@@ -1,11 +1,44 @@
 .App {
   text-align: center;
+  background-color: rgb(245, 245, 245);
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.btn {
+  float: left;
+  margin-top: -35px;
+}
+
+.btn i {
+  display: initial;
+  color: #fff;
+  text-align: center;
+  padding: 14px 16px;
+  /* background-color: #04AA6D ; */
+}
+
+.btn i:hover {
+  /* background-color: #058d5b; */
+  cursor: pointer;
+  color: #04AA6D;
+}
+
+ul.topnav li.right {
+  float: right;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: large;
+  font-weight: bolder;
+  cursor: default;
 }
 
 .App-header {
@@ -19,15 +52,42 @@
   color: white;
 }
 
-.App-link {
-  color: #b318f0;
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  min-height: 300px;
+  background-color: rgba(240, 240, 240, 0.95);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.modalBtn {
+  float: right;
 }
+
+.modalBtn i {
+  display: initial;
+  color: #333;
+  text-align: center;
+  padding: 14px 16px;
+  /* background-color: #04AA6D ; */
+}
+
+.modalBtn i:hover {
+  /* background-color: #058d5b; */
+  cursor: pointer;
+  color: #ff0022;
+}
+
+.modalTitle {
+  float: left;
+  display: block;
+  color: #333;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: xx-large;
+  font-weight: bolder;
+  cursor: default;
+}
+
